@@ -1,16 +1,15 @@
-# part2_3
+# 📝 NoteApp
 
-A new Flutter project.
+A Flutter application for managing notes with Firebase and Supabase integration.
 
-## Getting Started
+## 🚀 Features
+- User authentication (Firebase)
+- Cloud-based note storage (Supabase)
+- Real-time updates and responsive UI
 
-This project is a starting point for a Flutter application.
+## 🧰 Tech Stack
+Flutter • Dart • Firebase • Supabase • Provider
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 📫 Author
+**Sohila Khaled**  
+[LinkedIn](https://www.linkedin.com/in/sohaila-ahmed-a23214305) | [Email](mailto:sokhaleed@gmail.com)
