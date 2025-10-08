@@ -25,47 +25,50 @@ class _AuthPageState extends State<AuthPage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            if (!isLogin)
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              if (!isLogin)
+                TextField(
+                  controller: usernameCtrl,
+                  decoration: const InputDecoration(hintText: "Username"),
+                ),
               TextField(
-                controller: usernameCtrl,
-                decoration: const InputDecoration(hintText: "Username"),
+                controller: emailCtrl,
+                decoration: const InputDecoration(hintText: "Email"),
               ),
-            TextField(
-              controller: emailCtrl,
-              decoration: const InputDecoration(hintText: "Email"),
-            ),
-            TextField(
-              controller: passCtrl,
-              obscureText: true,
-              decoration: const InputDecoration(hintText: "Password"),
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
-              onPressed: () async {
-                if (isLogin) {
-                  await authController.signIn(
-                      email: emailCtrl.text.trim(),
-                      password: passCtrl.text.trim());
-                } else {
-                  await authController.signUp(
-                      email: emailCtrl.text.trim(),
-                      password: passCtrl.text.trim(),
-                      username: usernameCtrl.text.trim());
-                }
-                Get.offAll(() => NotesListPage());
-              },
-              child: Text(isLogin ? "Login" : "Sign Up",style: TextStyle(color: Colors.white),),
-            ),
-            TextButton(
-              onPressed: () => setState(() => isLogin = !isLogin),
-              child: Text(isLogin
-                  ? "Don’t have an account? Sign Up"
-                  : "Already have an account? Login", style: TextStyle(color: Colors.black),),
-            ),
-          ],
+              TextField(
+                controller: passCtrl,
+                obscureText: true,
+                decoration: const InputDecoration(hintText: "Password"),
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
+                onPressed: () async {
+                  if (isLogin) {
+                    await authController.signIn(
+                        email: emailCtrl.text.trim(),
+                        password: passCtrl.text.trim());
+                  } else {
+                    await authController.signUp(
+                        email: emailCtrl.text.trim(),
+                        password: passCtrl.text.trim(),
+                        username: usernameCtrl.text.trim());
+                  }
+                  Get.offAll(() => NotesListPage());
+                },
+                child: Text(isLogin ? "Login" : "Sign Up",style: TextStyle(color: Colors.white),),
+              ),
+              TextButton(
+                onPressed: () => setState(() => isLogin = !isLogin),
+                child: Text(isLogin
+                    ? "Don’t have an account? Sign Up"
+                    : "Already have an account? Login", style: TextStyle(color: Colors.black),),
+              ),
+            ],
+          ),
         ),
       ),
     );
